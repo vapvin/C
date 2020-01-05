@@ -37,6 +37,33 @@ void preorder(Node* root){
     preorder(root->rightChild);
 }
 
+Node* findMinNode(Node* root) {
+    Node* node = root;
+    while(node->leftChild != NULL){
+        node = node->leftChild;
+    }
+    return node;
+}
+
+Node* deleteNode(Node* root, int data){
+    Node* node = NULL;
+    if(root == NULL) return NULL;
+    if(root->data > data) root->leftChild = deleteNode(root>leftChild, data);
+    else if(root->data < data) root->rightChild = deleteNode(root->rightChild, data);
+    else {
+        if((root->leftChild != NULL) && (root->rightChild != NULL)) {
+            node = findMinNode(root->rightChild);
+            root->data = node->data;
+            root->rightChild = deleteNode(root->rightChild, node->data);
+        } else {
+            node = (root->leftChild != NULL) ? root->leftChild : root->rightChild;
+            free(root);
+            return node;
+        }
+    }
+    return root;
+}
+
 int main(void) {
     Node* root = NULL;
     root = insertNode(root, 30);
