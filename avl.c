@@ -44,3 +44,17 @@ Node* rotateRR(Node* node) {
     setHeight(node);
     return rightChild;
 }
+
+Node *rotateLR(Node* node) {
+    Node *leftChild = node->leftChild;
+    node->leftChild = rotateRR(leftChild);
+    setHeight(node->leftChild);
+    return rotate(node);
+}
+
+Node *rotateRL(Node* node) {
+    Node *rightChild = node->rightChild;
+    node->rightChild = rotateLL(rightChild);
+    setHeight(node->rightChild);
+    return rotate(node);
+}
