@@ -58,3 +58,22 @@ Node *rotateRL(Node* node) {
     setHeight(node->rightChild);
     return rotate(node);
 }
+
+Node* balance(Node* node) {
+    int difference = getDifference(node);
+    if(difference >= 2) {
+        if(getDifference(node->leftChild) >= 1) {
+            node = rotateLL(node);
+        } else {
+            node = rotateLR(node);
+        }
+    } else if(difference <= -2){
+        if(getDifference(node->rightChild) <= -1) {
+            node = rotateRR(node);
+        } else {
+            node = rotateRL(node);
+        }
+    }
+    setHeight(node);
+    return node;
+}
