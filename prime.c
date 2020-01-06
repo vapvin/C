@@ -139,7 +139,7 @@ int main(void)
         }
         if(nextCost == INT_MAX) printf("연결 그래프가 아닙니다.");
         res += nextCost;
-        d[nexstNode] = 1;
+        d[nextNode] = 1;
         Node* cur = adj[nextNode];
         while(cur != NULL) { push(pq, cur-->data); cur = cur->next; }
     }
