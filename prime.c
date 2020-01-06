@@ -42,3 +42,34 @@ void push(priorityQueue *pq, Edge *edge)
     }
     pq->count++;
 }
+
+Edge *pop(priorityQueue *pq)
+{
+    if (pq->count <= 0)
+        return NULL;
+    Edge *res = pq->heap[0];
+    pq->count--;
+    pq->heap[0] = pq->heap[pq->count];
+    int now = 0, leftChild = 1, rightChild = 2;
+    int target = now;
+    while (leftChild < pq->count)
+    {
+        if (pq->heap[target]->cost > pq->heap[leftChild]->cost)
+        {
+            target = leftChild;
+        }
+        if (pq->heap[target]->cost > pq->heap[rightChild]->cost && rightChild < pq->count)
+        {
+            target = rightChild;
+        }
+        else
+        {
+            swap(pq->heap[now], pq->heap[target]);
+            now = target;
+            leftChild = now * 2 + 1;
+            rightChild = now * 2 + 2;
+        }
+    }
+
+    return res;
+}
