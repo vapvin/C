@@ -16,6 +16,12 @@ typedef struct
     int count;
 } priorityQueue;
 
+typedef struct
+{
+    Edge *data;
+    struct Node *next;
+} Node;
+
 void swap(Edge *a, Edge *b)
 {
     Edge temp;
@@ -72,4 +78,31 @@ Edge *pop(priorityQueue *pq)
     }
 
     return res;
+}
+
+Node **adj;
+int d[NODE_MAX];
+
+void addNode(Node **target, int index, Edge *edge)
+{
+    if (target[index] == NULL)
+    {
+        target[index] = (Node *)malloc(sizeof(Node));
+        target[index]->data = edge;
+        target[index]->next = NULL;
+    }
+    else
+    {
+        Node *node = (Node *)malloc(sizeof(Node));
+        node->data = edge;
+        node->next = target[index];
+        target[index] = node;
+    }
+}
+
+int main(void)
+{
+    int n, m;
+    scanf("%d %d", &n, &m);
+    adj = (Node **)malloc(sizeof(Node *) * (n + 1));
 }
