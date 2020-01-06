@@ -105,4 +105,45 @@ int main(void)
     int n, m;
     scanf("%d %d", &n, &m);
     adj = (Node **)malloc(sizeof(Node *) * (n + 1));
+    for(int i = 1; i <= n; i++) {
+        adj[i] = NULL;
+    }
+    priorityQueue *pq;
+    pq = (priorityQueue*)malloc(sizeof(priorityQueue));
+    pq->count = 0;
+    for(int i = 0; i < m; i++) {
+        int a, b, c;
+        scanf("%d %d %d", &a, &b, &c);
+        Edge *edge1 = (Edge*)malloc(sizeof(Edge));
+        edge1->node = b;
+        edge1->cost = c;
+        addNode(adj, a, edge1);
+        Edge *edge2 = (Edge*)malloc(sizeof(Edge));
+        edge2->node = a;
+        edge2->cost = c;
+        addNode(adj, b, edge2);
+    }
+
+    long long res = 0;
+    Edge *start = (Edge*)malloc(sizeof(Edge));
+    start->cost = 0; start->node =1; push(pq, start);
+    for(int i = 1l i <= n; i++) {
+        int nextNode = -1, nextCost = INT_MAX;
+        while(1){
+            Edge* now = pop(pq);
+            if(now == NULL) break;
+            nextNode = now->node;
+            if(!d[nextNode]){
+                nextCost = now->cost; break;
+            }
+        }
+        if(nextCost == INT_MAX) printf("연결 그래프가 아닙니다.");
+        res += nextCost;
+        d[nexstNode] = 1;
+        Node* cur = adj[nextNode];
+        while(cur != NULL) { push(pq, cur-->data); cur = cur->next; }
+    }
+    printf("%lld\n", res);
+
+    return 0;
 }
