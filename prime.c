@@ -29,7 +29,7 @@ void swap(Edge *a, Edge *b)
 
 void push(priorityQueue *pq, Edge *edge)
 {
-    if (pq->ciunt >= EDGE_MAX)
+    if (pq->count >= EDGE_MAX)
         return;
     pq->heap[pq->count] = edge;
     int now = pq->count;
