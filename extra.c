@@ -89,3 +89,89 @@ Edge *pop(priorityQueue *pq)
 
 Node **adj;
 int ans[NODE_MAX];
+
+void addNode(Node **target, int index, Edge *edge)
+{
+
+    if (target[index] == NULL)
+    {
+        target[index] = (Node *)malloc(sizeof(Node));
+        target[index]->data = edge;
+        target[index]->next = NULL;
+    }
+    else
+    {
+        Node *node = (Node *)malloc(sizeof(Node));
+        node->data = edge;
+        node->next = target[index];
+        target[index] = node;
+    }
+}
+
+int main(void)
+{
+    int n, m, k;
+    scanf("%d %d %d", &n, &m, &k);
+    adj = (Node **)malloc(sizeof(Node *) * (n + 1));
+    for (int i = 1; i <= n; i++)
+    {
+        adj[i] = NULL;
+        ans[i] = INT_MAX;
+    }
+    priorityQueue *pq;
+    pq = (priorityQueue *)malloc(sizeof(priorityQueue));
+    pq->count = 0;
+    for (int i = 0; i < m; i++)
+    {
+        int a, b, c;
+        scanf("%d %d %d", &a, &b, &c);
+        Edge *edge = (Edge *)malloc(sizeof(Edge));
+        edge->node = b;
+        edge->cost = c;
+        addNode(adj, a, edge);
+    }
+
+    ans[k] = 0;
+    Edge *start = (Edge *)malloc(sizeof(Edge));
+    start->node = 0;
+    start->cost = k;
+    push(pq, start);
+    while (1)
+    {
+        Edge *now = pop(pq);
+        if (now == NULL)
+        {
+            break;
+        }
+        int curNode = now->node;
+        int curCost = now->cost;
+        if (ans[curNode] < curCost)
+        {
+            continue;
+        }
+        Node *cur = adj[curNode];
+        while (cur != NULL)
+        {
+            Edge *temp = cur->data;
+            temp->cost += curCost;
+            if (temp->cost < ans[temp->node])
+            {
+                ans[temp->node] = temp->cost;
+                push(pq, temp);
+            }
+            cur = cur->next;
+        }
+    }
+    for (int i = 1; i <= n; i++)
+    {
+        if (ans[i] == INT_MAX)
+        {
+            printf("INF\n");
+        }
+        else
+        {
+            printf("%d", ans[i]);
+        }
+    }
+    return 0;
+}
