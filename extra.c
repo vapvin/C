@@ -16,6 +16,12 @@ typedef struct
     int count;
 } priorityQueue;
 
+typedef struct
+{
+    Edge *data;
+    struct Node *next;
+} Node;
+
 void swap(Edge *a, Edge *b)
 {
     Edge temp;
@@ -80,3 +86,6 @@ Edge *pop(priorityQueue *pq)
     }
     return res;
 }
+
+Node **adj;
+int ans[NODE_MAX];
