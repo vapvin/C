@@ -25,7 +25,7 @@ int sum(int start, int end, int node, int left, int right)
         return tree[node];
     }
     int mid = (start + end) / 2;
-    return sum(start, mid, node * 2, left, right) + (mid + 1, end, node * 2 + 1, left, right);
+    return sum(start, mid, node * 2, left, right) + sum(mid + 1, end, node * 2 + 1, left, right);
 }
 
 void update(int start, int end, int node, int index, int dif)
@@ -43,4 +43,14 @@ void update(int start, int end, int node, int index, int dif)
     int mid = (start + end) / 2;
     update(start, mid, node * 2, index, dif);
     update(mid + 1, end, node * 2 + 1, index, dif);
+}
+
+int main(void)
+{
+    init(0, NUMBER - 1, 1);
+    printf("0부터 6까지의 구간합: %d \n", sum(0, NUMBER - 1, 1, 0, 6));
+    printf("인덱스 5의 원소를 3만큼 수정 \n");
+    update(0, NUMBER - 1, 1, 5, 3);
+    printf("3부터 6까지의 구간합: %d\n", sum(0, NUMBER - 1, 1, 3, 6));
+    return 0;
 }
