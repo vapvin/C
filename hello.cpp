@@ -1,10 +1,18 @@
 #include <iostream>
-#include <string>
 
-int main(void)
-{
-    std::string input;
-    std::cin >> input;
-    std::cout << input << std::endl;
-    return 0;
+namespace A {
+    void function() {
+        std::cout << "A Namespace" << std::endl;
+    }
+}
+
+namespace B {
+    void function() {
+        std::cout << "B Namespace" << std::endl;
+    }
+}
+
+int main(void) {
+    A::function();
+    B::function();
 }
