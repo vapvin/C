@@ -5,8 +5,10 @@ using namespace std;
 
 int main(void) {
     string input;
-    cin >> input;
-    cout << input << endl;
+    getline(cin, input);
+    for(int i = 0; i < input.size(); i++){
+        cout << input[i] << endl;
+    }
 
     return 0;
 }
