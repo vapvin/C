@@ -14,3 +14,12 @@ int sum(int i)
     }
     return res;
 }
+
+void update(int i, int dif)
+{
+    while (i <= NUMBER)
+    {
+        tree[i] += dif;
+        i += (i & -i);
+    }
+}
