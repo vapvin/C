@@ -1,18 +1,12 @@
 #include <iostream>
+#include <string>
 
-namespace A {
-    void function() {
-        std::cout << "A Namespace" << std::endl;
-    }
-}
-
-namespace B {
-    void function() {
-        std::cout << "B Namespace" << std::endl;
-    }
-}
+using namespace std;
 
 int main(void) {
-    A::function();
-    B::function();
+    string input;
+    cin >> input;
+    cout << input << endl;
+
+    return 0;
 }
