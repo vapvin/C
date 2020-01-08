@@ -23,3 +23,8 @@ void update(int i, int dif)
         i += (i & -i);
     }
 }
+
+int getSection(int start, int end)
+{
+    return sum(end) - sum(start - 1);
+}
