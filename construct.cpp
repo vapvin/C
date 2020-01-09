@@ -10,19 +10,23 @@ class Charactor {
         int hp;
         int damage;
     public:
-        // Charactor(string name, int hp, int damage){
-        //     this->name = name;
-        //     this->ragePoint = 0;
-        //     this->hp = hp;
-        //     this->damage = damage;
-        // }
+        Charactor(string name, int hp, int damage) : name(name), ragePoint(0), hp(hp), damage(damage) { }
+        Charactor(const Charactor& other){
+            name = other.name;
+            ragePoint = other.ragePoint;
+            hp = other.hp;
+            damage = other.damage;
+        }
+        void pointUp() {
+            ragePoint++;
+        }
         void show() {
             cout << name << "[" << ragePoint << "]" << hp << " " << damage << "\n";
         }
 };
 
 int main(void) {
-    Charactor charactor();
+    Charactor charactor("Slime", 100, 5);
     charactor.show();
     return 0;
 }
