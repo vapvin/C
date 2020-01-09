@@ -16,4 +16,7 @@ class Charactor {
             this->hp = hp;
             this->damage = damage;
         }
+        void show() {
+            cout << name << "[" << ragePoint << "]" << hp << " " << damage << "\n";
+        }
 };
