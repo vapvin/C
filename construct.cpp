@@ -26,7 +26,11 @@ class Charactor {
 };
 
 int main(void) {
-    Charactor charactor("Slime", 100, 5);
-    charactor.show();
+    Charactor charactor1("Slime", 100, 5);
+    charactor1.pointUp();
+    Charactor charactor2(charactor1);
+    charactor2.pointUp();
+    charactor1.show();
+    charactor2.show();
     return 0;
 }
