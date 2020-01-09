@@ -20,3 +20,9 @@ class Charactor {
             cout << name << "[" << ragePoint << "]" << hp << " " << damage << "\n";
         }
 };
+
+int main(void) {
+    Charactor charactor("Slime", 100, 5);
+    charactor.show();
+    return 0;
+}
