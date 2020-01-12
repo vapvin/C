@@ -70,3 +70,45 @@
 	ob_end_clean();
 }
 add_shortcode('page_submenu', 'submenu_shortcode');
+
+
+function submenu_script(){
+	?>
+	<script>
+	(function($){
+		$('.main-menu-more').remove();
+		$('button.submenu-expand').remove();
+		
+		var navArrow='<span class="nav-arrow"><img src="<?php echo get_stylesheet_directory_uri();?>/nav-img/nav_arrow.png"></span>';
+	
+		/*$('.highest-submenu-dropdown').each(function(){
+			var currentItemText=$(this).find('.current-menu-ancestor, .current_page_item').text();
+			$(this).find('.current-highest-page-title').text(currentItemText).append(navArrow);
+		});*/
+	
+		$('.submenu-dropdown').each(function(){
+			var currentItemText=$(this).find('.current-page-ancestor, .current_page_ancestor, .current_page_item').text();
+			$(this).find('.current-page-title').text(currentItemText).append(navArrow);
+		});
+		
+		var allDropdown=$('.submenu-dropdown-ul').hide();
+		
+		$('.current-page-title').on('click', function(){
+			var currentDropdown=$(this).siblings('.submenu-dropdown-ul');
+			allDropdown.slideUp();
+			allDropdown.not(currentDropdown).removeClass('on');
+			currentDropdown.toggleClass('on');
+	
+			if(currentDropdown.hasClass('on')==true){
+				currentDropdown.slideDown();
+			}
+			else{
+				currentDropdown.removeClass('on')
+				currentDropdown.slideUp();
+			}
+		});
+	})(jQuery);
+	</script>
+	<?php
+	}
+	add_action('wp_footer', 'submenu_script');
