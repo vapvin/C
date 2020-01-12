@@ -39,4 +39,34 @@
 			}
 		}
 
-		
+		//style
+	$submenu_content.='<style type="text/css">';
+	$submenu_content.='#submenu-list{display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; width:100%; height:50px;}
+	#submenu-list div{height:100%; line-height: 50px;}
+	.submenu-container{display:inline-block;}
+	.highest-submenu-dropdown-ul{position:absolute; display:none; list-style:none; margin:0; z-index:999;}
+	.current-highest-page-title{cursor:pointer;}
+	.submenu-dropdown-ul{position:absolute; display:none; list-style:none; margin:0; z-index:999;}
+	.current-page-title{cursor:pointer;}
+	.nav-arrow{float:right;}
+	/*.main-menu-more{display:none;}
+	button.submenu-expand{display:none;}*/';
+	$submenu_content.='</style>';
+	
+	//submenu start
+	$submenu_content.='<aside id="submenu-list">';
+	$submenu_content.='<div class="submenu-container go-home">
+							<a href="'.home_url().'"><img src="'.get_stylesheet_directory_uri().'/nav-img/nav_home.png" alt="home"></a>
+						</div>';
+	$submenu_content.=$highest_level;
+	
+	if($children){
+		$submenu_content.=$children;
+	}
+	$submenu_content.='</aside>';
+	
+	return $submenu_content;
+
+	ob_end_clean();
+}
+add_shortcode('page_submenu', 'submenu_shortcode');
