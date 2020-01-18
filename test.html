@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tab-menu {
+            text-align:center;
+        }
+        
+        .content .tab-menu input[type="radio"] {
+            display: none;
+        }
+        .content .tab-menu input[type="radio"] + label {
+            display: inline-block;
+            font-family: 'Poiret One', cursive, sans-serif;
+            font-size: 30px;
+            padding: 20px 40px;
+            color: #282828;
+            cursor: pointer;
+        }
+        .content .tab-menu input[type="radio"]:checked + label {
+            color: #fff;
+        }
+        /*3-4-1탭메뉴*/
+        /*3-4-2탭내용*/
+        .content .tab-menu  .tab {
+            display: none;
+        }
+        /*탭버튼과 각각 탭내용 연결 | 형제선택자 사용(~) 클릭할때 블록형태로변경*/
+        .content .tab-menu input[id="siteMap"]:checked ~ .sitemap-menu {
+            display: block;
+            text-align: center;
+        }
+        .content .tab-menu .sitemap-menu  {
+            padding-top: 20px;
+        }
+        .content .tab-menu .sitemap-menu img {
+            background: #fff;
+        }
+        .content .tab-menu .sitemap-menu p {
+            color: #afafaf;
+            padding: 10px 0;
+        }
+        .content .tab-menu input[id="styleGuide"]:checked ~ .stylegulde-menu {
+            display: block;
+            text-align: center;
+        }
+        .content .tab-menu .stylegulde-menu{
+            padding-top: 20px;
+        }
+        .content .tab-menu input[id="design"]:checked ~ .design-menu {
+            display: block;
+            text-align: center;
+        }
+        .content .tab-menu .design-menu {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="tab-menu container">
+        <!--3-4-1. 탭 메뉴-->
+         <input type="radio" name="tabmenu" id="siteMap" checked>
+         <label for="siteMap">SITE MAP</label>
+         <input type="radio" name="tabmenu" id="styleGuide">
+         <label for="styleGuide">STYLE GUIDE</label>
+         <input type="radio" name="tabmenu" id="design">
+         <label for="design">DESIGN</label>
+        <!--3-4-1. 탭 메뉴-->
+        <!--3-4-2.탭 내용-->
+        <div class="tab sitemap-menu">
+            <img src="images/forte_sitemap.png" alt="사이트맵">
+            <p>&#8251;현재 구현된 페이지는 Home | Artist : actors | Things : home 총 3페이지 입니다.</p>
+        </div>
+        <div class="tab stylegulde-menu">
+           <img src="images/forte_styleguide.jpg" alt="스타일가이드"> 
+        </div>
+        <div class="tab design-menu">
+            <img src="images/forte_main.jpg" alt="메인페이지 디자인">
+            <img src="images/forte_sub.jpg" alt="서브페이지actor 디자인">
+            <img src="images/forte_sub2.jpg" alt="서브페이지things 디자인">
+            <div class="design-mini-slide">
+                <ul>
+                    <li><img src="images/forte_main_minislide_img.jpg" alt="메인페이지 미리보기"></li>
+                    <li><img src="images/forte_sub_minislide_img.jpg" alt="서브페이지actor 미리보기"></li>
+                    <li><img src="images/forte_sub2_minislide_img.jpg" alt="서브페이지thing 미리보기"></li>
+                </ul>
+            </div>
+        </div>
+        <!--3-4-2.탭 내용-->
+</body>
+</html>
