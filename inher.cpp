@@ -8,4 +8,10 @@ class Person {
         string name;
     public:
         Person(string name): name(name){}
+        string getName(){
+            return name;
+        }
+        void showName(){
+            cout << "Name" << getName() << "\n";
+        }
 };
