@@ -15,3 +15,7 @@ class Person {
             cout << "Name" << getName() << "\n";
         }
 };
+
+class Student: Person {
+    
+}
