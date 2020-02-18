@@ -17,5 +17,10 @@ class Person {
 };
 
 class Student: Person {
-    
+    private:
+        int studentID;
+    public:
+        Student(int studentID, string name): Person(name){
+            this->studentID = studentID;
+        }
 }
