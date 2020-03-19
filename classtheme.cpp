@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>
+template <typename T = int>
 class Data {
     private:
         T data;
