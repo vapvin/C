@@ -12,3 +12,5 @@ int main(){
     struct sockaddr_in saddr = {0, }; // Binding to Addr
     saddr.sin_family = AF_INET;
 }
+
+// Create Net 
