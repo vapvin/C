@@ -1,16 +1,19 @@
-#include <stdio.h>
-#include<stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
+// Comment
 
-int main(){
-    int current_socket = socket(PF_INET, SOCK_STREAM, 0); // << Create Socket
+//Login
 
-    struct sockaddr_in saddr = {0, }; // Binding to Addr
-    saddr.sin_family = AF_INET;
-}
+char *getlogin(void);
+char *cuserid(char *s);
 
-// Create Net 
+// etc..
+
+// shadow
+
+struct spwe *getspname(const char *name);
+struct spwd *getspent(void);
+void setsent(void);
+void endspent(void);
+
+// Time
+
+time_t time(time_t *tloc);
