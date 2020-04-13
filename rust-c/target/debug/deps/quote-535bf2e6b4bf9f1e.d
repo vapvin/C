@@ -1,0 +1,13 @@
+/Users/vins/Documents/Dev/C/rust-c/target/debug/deps/quote-535bf2e6b4bf9f1e.rmeta: /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/lib.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ext.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/format.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ident_fragment.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/to_tokens.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/runtime.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/spanned.rs
+
+/Users/vins/Documents/Dev/C/rust-c/target/debug/deps/libquote-535bf2e6b4bf9f1e.rlib: /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/lib.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ext.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/format.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ident_fragment.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/to_tokens.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/runtime.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/spanned.rs
+
+/Users/vins/Documents/Dev/C/rust-c/target/debug/deps/quote-535bf2e6b4bf9f1e.d: /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/lib.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ext.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/format.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ident_fragment.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/to_tokens.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/runtime.rs /Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/spanned.rs
+
+/Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/lib.rs:
+/Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ext.rs:
+/Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/format.rs:
+/Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/ident_fragment.rs:
+/Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/to_tokens.rs:
+/Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/runtime.rs:
+/Users/vins/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.3/src/spanned.rs:
