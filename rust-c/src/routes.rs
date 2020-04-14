@@ -37,3 +37,16 @@ pub struct Routes {
     pub create_coupon: Route<Json<Result<Coupon, failure::Error>>>,
     pub delete_coupon: Route<()>,
 }
+
+// Next Line - Debug..
+
+lazy_static! {
+    pub static ref ROUTES: Routes = Routes {
+        login: Route {
+            aoi: Api::Auth,
+            path: "/user/login",
+            method: Method::Post,
+            
+        }
+    }
+}
