@@ -46,7 +46,16 @@ lazy_static! {
             aoi: Api::Auth,
             path: "/user/login",
             method: Method::Post,
-            
-        }
+            auth: false,
+            _marker: PhantomData,
+        },
+        fetch_coupons: Route {
+            api: Api::Licenses,
+            path: "/coupons",
+            method: Method::Get,
+            auth: true,
+            _marker: PhantomData,
+        },
+        
     }
 }
