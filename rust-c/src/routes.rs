@@ -16,3 +16,24 @@ impl std::fmt::Display for Api {
         }
     }
 }
+
+pub struct Rout<R>{
+    pub api: Api,
+    pub path: &'static str,
+    pub method: Method,
+    pub auth: bool,
+    pub _marker: PhantomData<R>,
+}
+
+use crate::app::models::coupon::Coupon;
+use crate::app::models::stripe_coupon::StripeCoupon;
+use crate::app::pages::login::LoginResponse;
+use yew::format::Json;
+
+pub struct Routes {
+    pub login: Route<Json<Result<LoginResponse, failure::Error>>>,
+    pub fetch_coupons: Route<Json<Result<Vec<Coupon>, failure::Error>>>,
+    pub update_coupon: Route<Json<Result<Coupon, failure::Error>>>,
+    pub create_coupon: Route<Json<Result<Coupon, failure::Error>>>,
+    pub delete_coupon: Route<()>,
+}
