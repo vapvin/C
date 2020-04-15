@@ -19,3 +19,15 @@ pub enum Method {
     Patch,
     Delete,
 }
+
+#[derive(Deserialize)]
+pub struct ErrorResponse {
+    pub error: String,
+}
+
+#[derive(Deserialize, Debug)]
+pub struct JWT {
+    sub: Uuid,
+    exp: i32,
+    ...
+}
