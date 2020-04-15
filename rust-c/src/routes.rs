@@ -43,10 +43,39 @@ pub struct Routes {
 lazy_static! {
     pub static ref ROUTES: Routes = Routes {
         login: Route {
-            aoi: Api::Auth,
-            path: "/user/login",
+            api: Api::Auth,
+            path: "/users/login",
             method: Method::Post,
-            
+            auth: false,
+            _marker: PhantomData,
+        },
+        fetch_coupons: Route {
+            api: Api::Licenses,
+            path: "/coupons",
+            method: Method::Get,
+            auth: true,
+            _marker: PhantomData,
+        },
+        update_coupon: Route {
+            api: Api::Licenses,
+            path: "/coupons",
+            method: Method::Patch,
+            auth: true,
+            _marker: PhantomData,
+        },
+        create_coupon: Route {
+            api: Api::Licenses,
+            path: "/coupons",
+            method: Method::Post,
+            auth: true,
+            _marker: PhantomData,
+        },
+        delete_coupon: Route {
+            api: Api::Licenses,
+            path: "/coupons",
+            method: Method::Delete,
+            auth: true,
+            _marker: PhantomData,
         }
-    }
+    };
 }
