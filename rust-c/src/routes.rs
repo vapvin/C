@@ -56,6 +56,7 @@ lazy_static! {
             auth: true,
             _marker: PhantomData,
         },
+
         update_coupon: Route {
             api: Api::Licenses,
             path: "/coupons",
@@ -78,4 +79,3 @@ lazy_static! {
             _marker: PhantomData,
         }
     };
-}
