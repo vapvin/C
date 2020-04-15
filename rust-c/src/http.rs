@@ -31,3 +31,12 @@ pub struct JWT {
     exp: i32,
     ...
 }
+
+pub struct HttpClient {
+    pub link: Option<ComponentLink<App>>,
+    storage_service: StorageService,
+    active_requests: Vec<FetchTask>,
+    raw_jwt: Option<String>,
+    jwt: Option<JWT>,
+    pub token: Option<String>,
+}
