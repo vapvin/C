@@ -6,5 +6,6 @@ typedef struct{
 } Node;
 
 int main(void){
-
+    // main struct used
+    ...etc
 }
