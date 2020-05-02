@@ -2,10 +2,10 @@
 
 typedef struct{
     int data;
-    int point;
+    struct Node *left;
+    struct Node *right;
 } Node;
 
 int main(void){
-    // main struct used
-    ...etc
+    return 0;
 }
