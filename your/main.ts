@@ -1,0 +1,1 @@
+cosnt yerim: string = "name"l
