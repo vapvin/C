@@ -40,7 +40,7 @@ _swap:                                  ## @swap
 	.p2align	4, 0x90
 _push:                                  ## @push
 	.cfi_startproc
-## %bb.0:
+%bb.0:
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset %rbp, -16
@@ -71,7 +71,7 @@ LBB1_2:
 	movl	$2, %esi
 	idivl	%esi
 	movl	%eax, -24(%rbp)
-LBB1_3:                                 ## =>This Inner Loop Header: Depth=1
+LBB1_3:
 	xorl	%eax, %eax
 	movb	%al, %cl
 	cmpl	$0, -20(%rbp)
@@ -174,8 +174,6 @@ LBB2_3:                                 ## =>This Inner Loop Header: Depth=1
 	movq	(%rax,%rcx,8), %rax
 	cmpl	(%rax), %edx
 	jle	LBB2_6
-## %bb.5:                               ##   in Loop: Header=BB2_3 Depth=1
-	movl	-32(%rbp), %eax
 	movl	%eax, -40(%rbp)
 LBB2_6:                                 ##   in Loop: Header=BB2_3 Depth=1
 	movq	-16(%rbp), %rax
@@ -219,7 +217,7 @@ LBB2_11:                                ##   in Loop: Header=BB2_3 Depth=1
 	shll	$1, %edx
 	addl	$2, %edx
 	movl	%edx, -36(%rbp)
-## %bb.12:                              ##   in Loop: Header=BB2_3 Depth=1
+ %bb.12:
 	jmp	LBB2_3
 LBB2_13:
 	movq	-24(%rbp), %rax
@@ -230,18 +228,18 @@ LBB2_14:
 	popq	%rbp
 	retq
 	.cfi_endproc
-                                        ## -- End function
-	.globl	_addNode                ## -- Begin function addNode
+
+	.globl	_addNode
 	.p2align	4, 0x90
-_addNode:                               ## @addNode
+_addNode:
 	.cfi_startproc
-## %bb.0:
+%bb.0:
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$32, %rsp
+	movq	$32, %rsp
 	movq	%rdi, -8(%rbp)
 	movl	%esi, -12(%rbp)
 	movq	%rdx, -24(%rbp)
