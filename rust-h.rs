@@ -21,3 +21,28 @@ use std::str::FromStr;
 
 use nickel::{Nickel, HttpRouter};
 use rustc_serialize::json::{Json,ToJson};
+
+const ONE_SEC_IN_MILLIS:u64 = 1000;
+const MAX_LEN_Q:u64 = 60;
+
+#[derive(Debug)]
+struct CorcularQ {
+    items: VecDeque<u32>
+}
+impl CircularQ {
+    fn new() -> CircularQ {
+        CircularQ {
+            items: VecDeque::<u32>::new()
+        }
+    }
+    fn push_item(&mut self, item: u32) -> (){
+        if self.items.len() >= MAX_LEN_Q as usize {
+            self.items.pop_front();
+        }
+        self.items.push_back(item);
+    }
+    fn get_items(&self) -> &VecDeque<u32>{
+        &self.items
+    }
+}
+
