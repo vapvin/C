@@ -46,3 +46,13 @@ impl CircularQ {
     }
 }
 
+impl ToJson for CircularQ {
+    fn to_json(&self)->Json {
+        let mut is = Vec::new();
+        for i in &self.items {
+            is.push(i.to_json());
+        }
+        Json::Array(is)
+    }
+}
+
