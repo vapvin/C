@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
- 
 void chck(char* tet, int len){
      int count = 0;
 for (int i = 0; i < len / 2; i++){
