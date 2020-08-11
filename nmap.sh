@@ -25,3 +25,38 @@ usage(){
     exit 1
 }
 
+
+header(){
+echo -e ""
+
+if [ "$2" == "All" ]; then
+	echo -e "${YELLOW}Running all scans on $1"
+else
+	echo -e "${YELLOW}Running a $2 scan on $1"
+fi
+
+subnet=$(echo "$1" | cut -d "." -f 1,2,3)".0"
+
+checkPing=$(checkPing "$1")
+nmapType="nmap -Pn"
+
+: '
+#nmapType=`echo "${checkPing}" | head -n 1`
+if [ "$nmapType" != "nmap" ]; then 
+	echo -e "${NC}"
+	echo -e "${YELLOW}No ping detected.. Running with -Pn option!"
+	echo -e "${NC}"
+fi
+'
+
+ttl=$(echo "${checkPing}" | tail -n 1)
+if [[  $(echo "${ttl}") != "nmap -Pn" ]]; then
+	osType="$(checkOS "$ttl")"	
+	echo -e "${NC}"
+	echo -e "${GREEN}Host is likely running $osType"
+	echo -e "${NC}"
+fi
+
+echo -e ""
+echo -e ""
+}
